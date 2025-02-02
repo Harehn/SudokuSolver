@@ -1,0 +1,37 @@
+class Cell{
+  Integer number;
+  Integer[] possible_numbers;
+  Boolean given;
+  Boolean solved;
+}
+
+class Group{
+  * -> 9 Cell cells;
+}
+
+class Sudoku{
+  *->9 Group rows;
+  *->9 Group columns;
+  *->9 Group groups;
+}//$?[End_of_model]$?
+
+namespace -;
+
+class Cell
+{
+  position 72 276 210.75 107.5;
+}
+
+class Group
+{
+  position 132 182 109 39.5;
+  position.association Cell:cells__Group 54,40 89,0;
+}
+
+class Sudoku
+{
+  position 126 21 109 39.5;
+  position.association Group:groups__Sudoku 103,40 103,0;
+  position.association Group:columns__Sudoku 55,40 47,0;
+  position.association Group:rows__Sudoku 0,34 0,0;
+}
